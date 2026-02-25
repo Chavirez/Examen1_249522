@@ -85,19 +85,19 @@ public class PnlFrutas extends javax.swing.JPanel {
         int cantManzana = cmbManzana.getSelectedIndex();
         int cantToronja = cmbToronja.getSelectedIndex();
         
-        Producto banana = new Producto("Banana", 50);
+        Producto banana = new Producto("Banana", 150);
         Producto manzana = new Producto("Manzana", 100);
-        Producto toronja = new Producto("Toronja", 150);
+        Producto toronja = new Producto("Toronja", 50);
         
         
         if(cantBananas > 0)
             control.seleccionarProducto(banana, cantBananas);
         
         if(cantManzana > 0)
-            control.seleccionarProducto(manzana, cantBananas);
+            control.seleccionarProducto(manzana, cantManzana);
         
         if(cantToronja > 0)
-            control.seleccionarProducto(toronja, cantBananas);
+            control.seleccionarProducto(toronja, cantToronja);
         
        
         

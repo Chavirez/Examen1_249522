@@ -16,12 +16,6 @@ public class CompraVista extends javax.swing.JFrame {
         
     }
 
-    public void mostrarProductos(){
-    
-        
-        
-    }
-
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -62,24 +56,77 @@ public class CompraVista extends javax.swing.JFrame {
         getContentPane().add(btnVerProductos, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 450, -1, -1));
 
         btnVerCarrito.setText("Ver mi carrito");
+        btnVerCarrito.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVerCarritoActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnVerCarrito, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 450, -1, -1));
 
         jButton2.setText("Proceder al pago");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 450, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnVerProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerProductosActionPerformed
-        
         PnlFrutas pnlFrutas = new PnlFrutas(control);
-        
+
+        pnlFrutas.setSize(pnlPrincipal.getWidth(), pnlPrincipal.getHeight());
+        pnlFrutas.setLocation(0, 0);
+
         pnlPrincipal.removeAll();
         pnlPrincipal.add(pnlFrutas);
-        
-        this.revalidate();
-        this.repaint();
+
+        pnlPrincipal.revalidate();
+        pnlPrincipal.repaint();
     }//GEN-LAST:event_btnVerProductosActionPerformed
+
+    private void btnVerCarritoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerCarritoActionPerformed
+        PnlCarrito pnlCarrito = new PnlCarrito(control);
+
+        pnlCarrito.setSize(pnlPrincipal.getWidth(), pnlPrincipal.getHeight());
+        pnlCarrito.setLocation(0, 0);
+
+        pnlPrincipal.removeAll();
+        pnlPrincipal.add(pnlCarrito);
+
+        pnlPrincipal.revalidate();
+        pnlPrincipal.repaint();
+    }//GEN-LAST:event_btnVerCarritoActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        
+        double monto = control.procesarPago();
+        
+        if (monto == 0) {
+            javax.swing.JOptionPane.showMessageDialog(
+                this,                            
+                "Por favor, agrega minimo 1 producto a tu carrito",
+                "Error de Productos",                
+                javax.swing.JOptionPane.ERROR_MESSAGE
+            );
+        } else {
+            
+            PnlPago pnlPago = new PnlPago(control);
+
+            pnlPago.setSize(pnlPrincipal.getWidth(), pnlPrincipal.getHeight());
+            pnlPago.setLocation(0, 0);
+
+            pnlPrincipal.removeAll();
+            pnlPrincipal.add(pnlPago);
+
+            pnlPrincipal.revalidate();
+            pnlPrincipal.repaint();
+            
+        }
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

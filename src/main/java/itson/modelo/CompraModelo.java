@@ -44,4 +44,9 @@ public class CompraModelo {
         
     }
     
+    public void reiniciarCarrito(){
+    
+        this.carrito.getProductos().clear();
+        
+    }
 }

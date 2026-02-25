@@ -1,7 +1,12 @@
 itson\modelo\Carrito.class
 itson\vista\CompraVista$1.class
+itson\vista\CompraVista$2.class
+itson\vista\CompraVista$3.class
+itson\vista\PnlPago$1.class
 itson\modelo\GestorPago.class
 itson\vista\CompraVista.class
+itson\vista\PnlCarrito.class
+itson\vista\PnlPago.class
 itson\control\CompraControl.class
 recursos\ImageUtils.class
 main\MVC.class

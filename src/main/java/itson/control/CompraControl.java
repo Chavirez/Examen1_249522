@@ -53,4 +53,10 @@ public class CompraControl {
         return modelo.regresarCarrito();
         
     }
+    
+    public void reiniciarCarrito(){
+    
+        this.modelo.reiniciarCarrito();
+        
+    }
 }
